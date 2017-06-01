@@ -9,6 +9,8 @@ class CodersController < ApplicationController
   end
 
   def show
+    #profile page
+    
   end
 
   def edit

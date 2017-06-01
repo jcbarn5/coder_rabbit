@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'session/index'
+
+  get 'session/new'
+
+  get 'session/create'
+
+  get 'session/show'
+
+  get 'session/edit'
+
+  get 'session/update'
+
+  get 'session/destroy'
+
   get 'jobs/index'
 
   get 'jobs/new'

@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
   def index
+    #dashboard for all jobs, coders and clients can view
   end
 
   def new
@@ -9,6 +10,7 @@ class JobsController < ApplicationController
   end
 
   def show
+    #show specific job
   end
 
   def edit
