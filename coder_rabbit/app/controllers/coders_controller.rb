@@ -12,8 +12,7 @@ class CodersController < ApplicationController
   def show
     #coder profile page
     @current_job = Job.find(current_user.id)
-
-
+    @completed_job = Job.find(current_user.id).includes(completed: true)
 
   end
 

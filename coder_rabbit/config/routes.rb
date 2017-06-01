@@ -5,7 +5,8 @@ root 'session#index'
 
   get 'session/new'
 
-  get 'session/create'
+  get 'session/create_coder' => 'session#create_coder'
+  get 'session/create_client' => 'session#create_client'
 
   get 'session/show'
 
