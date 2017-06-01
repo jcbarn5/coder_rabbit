@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+root 'session#index'
+
   get 'session/index'
 
   get 'session/new'
