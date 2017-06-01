@@ -1,5 +1,8 @@
 class SessionController < ApplicationController
 
+  def index
+  end
+  
   def create_coder
     @user = Coder.create(coder_params)
     if @user.valid?
