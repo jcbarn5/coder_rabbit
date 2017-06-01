@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def require_login
-    redirect_to "/users/index" unless session[:user_id]
+    redirect_to "/session/index" unless session[:user_id]
   end
 
   def current_user
@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   def res_session
     reset_session
-    render "users/index.html.erb"
+    render "/session/index"
   end
 
   helper_method :current_user

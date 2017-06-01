@@ -6,11 +6,15 @@ class CodersController < ApplicationController
   end
 
   def create
+    #coder accepts job, update Job with coder_id
   end
 
   def show
-    #profile page
-    
+    #coder profile page
+    @current_job = Job.find(current_user.id)
+
+
+
   end
 
   def edit
