@@ -1,5 +1,32 @@
-<h1>Registration for new coder</h1>
-
-<form action="/session/create_coder" method="post">
-
+<p><%= link_to "Back to Login Page", root_path, :method => "get" %></p>
+<h1>Welcome to the new developer registration page!</h1>
+    <fieldset  style="display:inline;">
+        <legend>Register</legend>
+        <form action="/session/create_coder" method="post">
+            <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+            <label  style="display:block;" for="first_name">First Name: <input type="text" name="user[first_name]"></label>
+            <label  style="display:block;" for="last_name">Last Name: <input type="text" name="user[last_name]"></label>
+            <label  style="display:block;" for="email">Email Address: <input type="text" name="user[email]"></label>
+            <label style="display:block;" for="languages">Which Languages Do You Use:<select name='user[languages]'>
+                language: <option value='Java'>Java</option>
+                language: <option value='Javascript'>Javascript</option>
+                language: <option value='PhP'>PhP</option>
+                language: <option value='Python'>Python</option>
+                language: <option value='Ruby'>Ruby</option>
+            </select>
+            <label style="display:block;" for="bootcamp">Which Bootcamp Did You Attend:<select name='user[bootcamp]'>
+                language: <option value='Coding Dojo'>Coding Dojo</option>
+                language: <option value='Flatiron'>Flatiron</option>
+                language: <option value='Iron Yard'>Iron Yard</option>
+                language: <option value='Le Wagon'>Le Wagon</option>
+                language: <option value='Wyncode'>Wyncode</option>
+            </select>
+            <label style="display:block;" for="profile">Please tell us a little about yourself: <input style="display:block; margin-left:80px;" type="textarea" name="user[profile]"></label>
+            <label style="display:block;" for="skills">Please give a brief description of your skills: <input style="display:block; margin-left:80px;" type="textarea" name="user[skills]"></label>
+            <p>*Password should be at least 8 characters</p>
+            <label  style="display:block;" for="password">Password: <input type="password" name="user[password]"></label>
+            <label  style="display:block;" for="confirm_password">Confirm Password: <input type="password" name="user[password_confirmation]"></label>
+            <input type="submit" value="Register">
+        </form>
+    </fieldset>
 </form>

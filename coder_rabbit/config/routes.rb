@@ -38,7 +38,7 @@ root 'session#index'
 
   get 'coders/create'
 
-  get 'coders/show'
+  get 'coders/:id/show' => 'coders#show'
 
   get 'coders/edit'
 
@@ -52,7 +52,7 @@ root 'session#index'
 
   get 'clients/create'
 
-  get 'clients/show'
+  get 'clients/:id/show' => 'clients#show'
 
   get 'clients/edit'
 
