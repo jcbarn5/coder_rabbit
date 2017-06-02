@@ -7,9 +7,9 @@ class SessionController < ApplicationController
     @user = Coder.create(coder_params)
     if @user.valid?
       session[:user_id] = @user.id
-      redirect_to "/coders"
+      redirect_to "/coders/#{@user.id}/show"
     else
-      flash[:errors] = ['invalid combo']
+      flash[:errors] = @user.errors.full_messages
       redirect_to :back
     end
   end
@@ -18,9 +18,9 @@ class SessionController < ApplicationController
     @user = Client.create(client_params)
     if @user.valid?
       session[:user_id] = @user.id
-      redirect_to "/clients"
+      redirect_to "/clients/#{@user.id}/show"
     else
-      flash[:errors] = ['invalid combo']
+      flash[:errors] = @user.errors.full_messages
       redirect_to :back
     end
   end
@@ -29,7 +29,7 @@ class SessionController < ApplicationController
     @user = Coder.find_by(email: params[:email])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect_to "/coders/"
+      redirect_to "/coders/#{@user.id}/show"
     else
       flash[:errors] = ['invalid email/password combo']
       redirect_to :back
@@ -40,7 +40,7 @@ class SessionController < ApplicationController
     @user = Client.find_by(email: params[:email])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect_to "/clients/"
+      redirect_to "/clients/#{@user.id}/show"
     else
       flash[:errors] = ['invalid email/password combo']
       redirect_to :back

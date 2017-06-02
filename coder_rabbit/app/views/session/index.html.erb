@@ -8,7 +8,7 @@
         <div class="client_login">
             <fieldset class="login_fieldset">
                 <h2 class="login-title">If you are an existing client, please login here:</h2>
-                <form action="/session/log_in_coder" method = "post">
+                <form action="/session/log_in_client" method = "post">
                     <input type = 'hidden' name = "authenticity_token" value = "<%=form_authenticity_token%>">
                     <label style="display:block;" for="email">Email: <input class="login_email" type="text" name="email"></label>
                     <label  style="display:block;" for="password">Password: <input type="password" name="password"></label>
