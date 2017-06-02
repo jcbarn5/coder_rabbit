@@ -5,8 +5,12 @@ class ApplicationController < ActionController::Base
     redirect_to "/session/index" unless session[:user_id]
   end
 
-  def current_user
-    User.find(session[:user_id]) if session[:user_id]
+  def current_coder
+    Coder.find(session[:user_id]) if session[:user_id]
+  end
+
+  def current_client
+    Client.find(session[:user_id]) if session[:user_id]
   end
 
   def res_session
