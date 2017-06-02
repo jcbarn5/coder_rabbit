@@ -7,7 +7,10 @@ class ClientsController < ApplicationController
   end
 
   def create
-
+    #create rating...
+    @coder = Coder.find(params[:id])
+    #use drop down menu so they are only able to select values 1-5
+    @coder.update(rating: params[:rating])
   end
 
   def show
@@ -21,6 +24,7 @@ class ClientsController < ApplicationController
   end
 
   def update
+    
   end
 
   def destroy

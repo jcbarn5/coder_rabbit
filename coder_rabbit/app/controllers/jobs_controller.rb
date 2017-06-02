@@ -2,6 +2,7 @@ class JobsController < ApplicationController
   def index
     @jobs = Job.all
     #query on front end to display all unnasigned jobs for coders
+    @jobs_available = Job.where("in_progess = ?", false)
     #querty for clients to display all jobs, completed jobs for their posting reference
     #dashboard for all jobs, coders and clients can view
   end
@@ -32,15 +33,19 @@ class JobsController < ApplicationController
   end
 
   def update
+    #coder accepts job, update Job with coder_id
     @job = Job.find(params[:id])
-    if @job.update(job_params)
+    if @job.update(rating: params[:rating])
       redirect_to "jobs/show/:id"
     else
       flash[:errors] = ['invalid field entry']
       redirect_to :back
   end
+end
 
   def destroy
+    @job = Job.find(params[:id])
+    @job.destroy
   end
 
   private
