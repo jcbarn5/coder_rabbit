@@ -15,8 +15,8 @@ class ClientsController < ApplicationController
 
   def show
     #client profile page
-    @current_job = Job.find(current_user.id).all
-    @completed_job = Job.where("client_id = ?", current_user.id).all
+    @current_job = Job.find(current_client.id).all
+    @completed_job = Job.where("client_id = ?", current_client.id).all
   end
 
   def edit
