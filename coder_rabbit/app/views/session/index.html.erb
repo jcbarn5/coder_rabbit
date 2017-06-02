@@ -1,14 +1,14 @@
-<div class="landing_wrapper">
+<div class="wrapper">
     <div class="site_info">
         <h1>Welcome!</h1>
-        <h3 class="site_description">This website is designed to connect businesses and individuals with website needs with the developers who can help them meet all their goals.</h3>
-        <h3 class="site_description">If you are new to the site, click the link below and we'll help you get started!</h3>
+        <h2 class="site_description">This website is designed to connect businesses and individuals with website needs with the developers who can help them meet all their goals.</h2>
+        <h2 class="site_description">If you are new to the site, click the link below and we'll help you get started!</h2>
     </div>
     <div class="landing_div">
         <div class="client_login">
             <fieldset class="login_fieldset">
                 <h2 class="login-title">If you are an existing client, please login here:</h2>
-                <form action="/sessions" method = "post">
+                <form action="/session/log_in_coder" method = "post">
                     <input type = 'hidden' name = "authenticity_token" value = "<%=form_authenticity_token%>">
                     <label style="display:block;" for="email">Email: <input class="login_email" type="text" name="email"></label>
                     <label  style="display:block;" for="password">Password: <input type="password" name="password"></label>
@@ -18,8 +18,8 @@
         </div>
         <div class="coder_login">
             <fieldset class="login_fieldset">
-                <h2 class="login-title">If you are an existing client, please login here:</h2>
-                <form action="/sessions" method = "post">
+                <h2 class="login-title">If you are an existing developer, please login here:</h2>
+                <form action="/session/log_in_coder" method = "post">
                     <input type = 'hidden' name = "authenticity_token" value = "<%=form_authenticity_token%>">
                     <label style="display:block;" for="email">Email: <input class="login_email" type="text" name="email"></label>
                     <label  style="display:block;" for="password">Password: <input type="password" name="password"></label>
@@ -30,10 +30,10 @@
     </div>
     <div class="landing_div">
         <div class="new_user">
-            <h2><%= link_to "If you are a new client, please click here and we will get you started on the path to finding your perfect programmer!", clients_new_path, class: "landing_link" %></h2>
+            <h2><%= link_to "If you are a new client, please click here and we will get you started on the path to finding your perfect developer!", clients_new_path, class: "landing_link" %></h2>
         </div>
         <div class="new_user">
-            <h2><%= link_to "If you are a new client, please click here and we will get you started on the path to finding your perfect programmer!", coders_new_path, class: "landing_link" %></h2>
+            <h2><%= link_to "If you are a developer new to our site, please click here and we will help get you connected with someone looking for your skills!", coders_new_path, class: "landing_link" %></h2>
         </div>
     </div>
 </div>

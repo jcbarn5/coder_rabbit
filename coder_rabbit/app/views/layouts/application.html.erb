@@ -7,21 +7,17 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+  <div class="wrapper">
     <% if flash[:errors] %>
-      <% flash[:errors].each do |error| %>
-        <%= error %>
+      <% flash[:errors].each do |note| %>
+          <h3 id="errors"><%= note %></h3>  
       <% end %>
     <% end %>
-    <% if current_user %>
-      <form id="logout" action="/sessions/" method="post">
-        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-        <input type="hidden" name="_method" value="delete">
-        <input type="submit" value="Log Out">
-      </form>
+    <% if flash[:notice] %>
+      <h3><%= flash[:notice] %></h3>
     <% end %>
-
     <%= yield %>
+  </div>
   </body>
 </html>

@@ -5,8 +5,10 @@ root 'session#index'
 
   get 'session/new'
 
-  get 'session/create_coder' => 'session#create_coder'
-  get 'session/create_client' => 'session#create_client'
+  post 'session/create_coder' => 'session#create_coder'
+  post 'session/create_client' => 'session#create_client'
+  post 'session/log_in_coder' => 'session#log_in_coder'
+  post 'session/log_in_client' => 'session#log_in_client'
 
   get 'session/show'
 
