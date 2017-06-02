@@ -1,2 +1,16 @@
-<h1>Clients#new</h1>
-<p>Find me in app/views/clients/new.html.erb</p>
+<h1>Welcome to the new client registration page!</h1>
+<form action="/session/create_coder" method="post">
+    <fieldset  style="display:inline;">
+        <legend>Register</legend>
+        <form action="/session/create_client" method="post">
+            <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+            <label  style="display:block;" for="company_name">Company Name: <input type="text" name="user[company_name]"></label>
+            <label  style="display:block;" for="admin_name">Name of Administrator: <input type="text" name="user[admin_name]"></label>
+            <label  style="display:block;" for="email">Email Address: <input type="text" name="user[email]"></label>
+            <p>*Password should be at least 8 characters</p>
+            <label  style="display:block;" for="password">Password: <input type="password" name="user[password]"></label>
+            <label  style="display:block;" for="confirm_password">Confirm Password: <input type="password" name="user[password_confirmation]"></label>
+            <input type="submit" value="Register">
+        </form>
+    </fieldset>
+</form>

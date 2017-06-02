@@ -3,12 +3,12 @@
     padding: 0px;
     font-family: sans-serif;
 }
-.landing_wrapper {
+.wrapper {
     margin: 0px auto;
     width: 900px;
     padding: 20px 20px 3px 20px;
-    background-image: url("landing_background.jpg");
-    color: darkred;
+    background: linear-gradient(#46acec, #1991dc);
+    text-align: center;
 }
 .site_info {
     text-align: center;
@@ -50,4 +50,22 @@
 }
 .landing_link {
     color: darkred;
+}
+table {
+    font-family: arial, sans-serif;
+    border: 1px solid black;
+}
+
+td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+h3 {
+    color:red
 }
