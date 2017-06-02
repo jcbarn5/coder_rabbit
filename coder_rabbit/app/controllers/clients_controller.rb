@@ -24,7 +24,7 @@ class ClientsController < ApplicationController
   end
 
   def update
-    
+
   end
 
   def destroy
