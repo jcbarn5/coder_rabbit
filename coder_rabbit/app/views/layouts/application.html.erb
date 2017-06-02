@@ -8,7 +8,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-  <div class="wrapper">
+  <div>
     <% if flash[:errors] %>
       <% flash[:errors].each do |note| %>
           <h3 id="errors"><%= note %></h3>  
